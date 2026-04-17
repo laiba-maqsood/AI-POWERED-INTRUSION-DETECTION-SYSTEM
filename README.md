@@ -1,18 +1,18 @@
-# CLO4 – AI-Powered Intrusion Detection System (IDS) Using Machine Learning
+# AI-Powered Intrusion Detection System (IDS) Using Machine Learning
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue) ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3-orange) ![Dataset](https://img.shields.io/badge/Dataset-UNSW--NB15-green) ![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red)
 
 ## Project Title
-**AI-Powered Network Intrusion Detection System — Proof of Concept**
+**AI-Powered Network Intrusion Detection System Proof of Concept**
 
 ## Objective
-Design, develop, and evaluate a Machine Learning model that classifies network traffic as **Normal** or **Attack** to augment the existing NIDS at SecureNet Corp. This project satisfies **CLO 4** of the Information Security course.
+Design, develop, and evaluate a Machine Learning model that classifies network traffic as **Normal** or **Attack** to augment the existing NIDS at SecureNet Corp.
 
 ---
 
 ## Dataset
 
-**UNSW-NB15** — Created by the Australian Centre for Cyber Security (ACCS).
+**UNSW-NB15**  Created by the Australian Centre for Cyber Security (ACCS).
 
 ### Download Instructions
 1. Visit: https://research.unsw.edu.au/projects/unsw-nb15-dataset
@@ -25,16 +25,16 @@ The dataset contains **175,341 records** with **45 features** representing real 
 
 ## How to Run
 
-### Option A — Streamlit Web Dashboard (Recommended)
+### Option A  Streamlit Web Dashboard (Recommended)
 
 ```bash
 pip install -r requirements.txt
 python -m streamlit run app.py
 ```
 
-Open http://localhost:8501. Upload `UNSW_NB15_training-set.csv` from the sidebar on first run. The model trains once (~30–60 seconds) and saves to disk automatically. All future runs load instantly — no re-upload needed.
+Open http://localhost:8501. Upload `UNSW_NB15_training-set.csv` from the sidebar on first run. The model trains once (~30–60 seconds) and saves to disk automatically. All future runs load instantly  no re-upload needed.
 
-### Option B — Jupyter Notebook
+### Option B  Jupyter Notebook
 
 ```bash
 pip install pandas numpy scikit-learn matplotlib seaborn jupyter
@@ -43,11 +43,11 @@ jupyter notebook CLO4-IDS-ML-Solution.ipynb
 
 ---
 
-## Streamlit Dashboard — UI Overview
+## Streamlit Dashboard  UI Overview
 
 A fully interactive web dashboard providing end-to-end ML pipeline: data upload, model training, visualizations, and live predictions.
 
-**Key feature:** Hybrid persistence — trains once, saves `model.pkl` to disk, loads instantly on all future runs.
+**Key feature:** Hybrid persistence trains once, saves `model.pkl` to disk, loads instantly on all future runs.
 
 ---
 
@@ -66,7 +66,7 @@ Scrollable raw data preview, stats (175,341 rows, 45 columns, 0 missing values, 
 ---
 
 ### Model Training
-Full configuration table, model file status (model.pkl — 58,568 KB), training results, and Force Retrain option.
+Full configuration table, model file status (model.pkl  58,568 KB), training results, and Force Retrain option.
 
 ![Model Training](ui_model_training.png)
 
@@ -110,7 +110,7 @@ Manual input mode (enter network flow features, get instant Normal/Attack result
 | True Negatives | 10,309 |
 | False Positives | 891 |
 
-**Key Security Finding:** 97.86% recall — only 510 out of 23,869 real attacks were missed. High recall is the most critical IDS metric as False Negatives represent undetected breaches.
+**Key Security Finding:** 97.86% recall  only 510 out of 23,869 real attacks were missed. High recall is the most critical IDS metric as False Negatives represent undetected breaches.
 
 ---
 
@@ -140,8 +140,8 @@ Raw UNSW-NB15 Data
 
 | File | Description |
 |------|-------------|
-| `app.py` | Streamlit web dashboard — full interactive pipeline |
-| `CLO4-IDS-ML-Solution.ipynb` | Jupyter Notebook — full ML pipeline |
+| `app.py` | Streamlit web dashboard  full interactive pipeline |
+| `CLO4-IDS-ML-Solution.ipynb` | Jupyter Notebook  full ML pipeline |
 | `requirements.txt` | Python dependencies |
 | `README.md` | This file |
 | `ui_dashboard.png` | Screenshot: Dashboard page |
@@ -161,20 +161,13 @@ Raw UNSW-NB15 Data
 ## Algorithm Justification
 
 **Random Forest** was selected because:
-- Ensemble of 100 decision trees — reduces overfitting vs. a single Decision Tree
+- Ensemble of 100 decision trees  reduces overfitting vs. a single Decision Tree
 - Handles complex, high-dimensional network feature spaces effectively
 - Provides built-in Gini feature importance for security analyst explainability
 - Robust to noisy data and outliers common in network packet captures
-- No assumption about feature distributions — works with mixed data types
+- No assumption about feature distributions  works with mixed data types
 
 **Top features:** `ct_state_ttl` (0.1306), `sttl` (0.1048), `dload` (0.0666), `rate` (0.0611), `sload` (0.0545)
-
----
-
-## Course Information
-- **Course:** Information Security
-- **CLO:** 4 — Create solutions to real-life scenarios using security-related tools
-- **Assignment:** Assignment 1 — AI-Powered Intrusion Detection Solution
 
 ---
 
